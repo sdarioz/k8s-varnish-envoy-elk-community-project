@@ -1,3 +1,5 @@
+
+
 # Varnish & Envoy Caching Guide :construction:
 **Varnish - Envoy - Kubernetes - Elasticsearch - Kibana - Filebeat + Logstash - Grafana, Prometheus, and more.**
 
@@ -26,20 +28,37 @@ Technologies like Kubernetes, Varnish, Envoy and Elastic Stack have an amazing p
 
 ### We need contributors! :calling: :satellite:
 
+---
+
+> # Getting Started with Varnish & Envoy on Kubernetes:
+> 
+> Jump right in:
+> 
+> - [Varnish Basics](docs/1-varnish-basics.md) [WIP]
+> - [Envoy as a Proxy](docs/4-envoy-k8s-monitoring.md) [WIP]
+> - [Deploying on Kubernetes](3-kubernetes-varnish.md) [WIP]
+> 
+> *New to Varnish and Envoy? Start here for an introduction.*
+> 
+> ## In-Depth Guides
+> 
+> Take a deep dive:
+> 
+> - [Production Deployments](docs/6-implementation-varnish-envoy-elastic.md) [WIP]
+> - [Monitoring & Observability](docs/monitoring.md) :construction:
+> - [Caching Invalidation](docs/cache-invalidation.md) :construction:
+> - [Security & Access Control](docs/security.md) :construction:
+> 
+> *Advanced configurations for real-world systems.*
 
 
-# Getting Started with Varnish & Envoy on Kubernetes
+# Docs :page_facing_up:
+Current docs cover:
 
-
-
-
-### Docs :page_facing_up:
-> Current docs cover:
-
-- Varnish and Envoy basics
-- Deploying on Kubernetes  
-- Monitoring with Elastic, Prometheus, etc
-- Configuration walkthroughs
+>- Varnish and Envoy basics
+>- Deploying on Kubernetes  
+>- Monitoring with Elastic, Prometheus, etc
+>- Configuration walkthroughs
 
 
 ## Repository Structure:
@@ -54,7 +73,7 @@ community-varnish-envoy-k8s-elk-guide
 │   ├── 5-varnish-envoy-overview.md - Reference architecture for Varnish + Envoy
 │   ├── 6-implementation-varnish-envoy-elastic.md - End-to-end deployment guide
 │   └── diagrams
-│       └── architecture.png - Reference architecture diagram
+│       └── caching-k8s-architecture.mermaid - Reference architecture diagram
 ├── README.md
 └── LICENSE
 ```
@@ -104,11 +123,10 @@ Let's evolve this into a comprehensive caching guide together
 
 ---
 ## About the Author
-Created by Sebastián Ramírez.
+Created by [Sebastián Ramírez](https://github.com/sdarioz).
 
 ## License
-Contents are licensed under CC BY-SA 4.0.
-Created by [Sebastián Ramírez](https://github.com/sdarioz).
+Contents are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 A simple goal: comprehensive guides demystifying technologies like Varnish, Envoy, and Kubernetes, collectively made.
 
