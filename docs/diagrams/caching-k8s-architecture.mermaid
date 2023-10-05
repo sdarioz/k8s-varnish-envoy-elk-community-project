@@ -1,0 +1,121 @@
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#0F1026',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#5210EB',
+      'lineColor': '#DEA54B',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#38384A',
+      'stroke': '#560FFE'
+    }
+  }
+}%%
+
+graph LR
+    subgraph k8s-Cluster
+        subgraph Nodes
+            Varnish[/Varnish Cache/]
+            App1-.->|9000|Filebeat
+            App2-.->|9000|Filebeat
+            Varnish-.->|9000|Filebeat
+            Envoy-.->|9000|Filebeat
+            Envoy[/Envoy Proxy/]
+            App1([App 1])
+            App2([App 2])
+            EnvoyDaemonSet[/Envoy DaemonSet/]-->Envoy
+        end
+
+        Varnish-.->|80|Ingress
+        Ingress-->|80|ExternalUser
+
+        Varnish-.->|8080|Envoy
+        Envoy-.->App1
+        Envoy-.->App2
+
+        App1-.->|9400|Zipkin
+        App2-.->|9400|Zipkin
+
+        Envoy-->|9411|Zipkin
+        Varnish-.->|9411|Zipkin
+
+
+        Filebeat-->|5044|Logstash
+    end
+
+subgraph Security [Security 🔒]
+NetworkPolicies[Network Policies 🔐]
+PodSecurityPolicies[Pod Security Policies 🛡️]
+RBAC[RBAC 🚦]
+SecretsManagement[Secrets Management 🗝️]
+ImageScanning[Image Scanning]
+NetworkPolicies-->Nodes
+PodSecurityPolicies-->Nodes
+RBAC-->Nodes
+SecretsManagement-->Nodes
+ImageScanning-->Nodes
+end
+
+subgraph Monitoring
+Prometheus-->|Scrape|Envoy
+Prometheus-->|Scrape|Varnish
+Prometheus-->|Scrape|App1
+Prometheus-->|Scrape|App2
+
+Zipkin[/Zipkin/]-->ElasticAPM[/Elastic APM/]
+
+
+Logstash[/Logstash/]-->Elasticsearch[/Elasticsearch/]
+
+
+Kibana[/Kibana/]-->Elasticsearch
+Grafana[/Grafana Dashboards/]
+end
+
+
+subgraph CICDPipeline [CI/CD Pipeline 🔄]
+SourceCode[Source Code 💻] --> Build(Build 🏗️)
+Build --> Test(Test 🧪)
+Test --> Deploy(Deploy 🚀)
+end
+
+linkStyle 0 stroke:#f87575,stroke-width:6px;
+linkStyle 1 stroke:#f87575,stroke-width:6px;
+linkStyle 3 stroke:#f87575,stroke-width:2px;
+linkStyle 5 stroke:#f87575,stroke-width:2px;
+linkStyle 6 stroke:#f87575,stroke-width:2px;
+linkStyle 7 stroke:#f87575,stroke-width:2px;
+linkStyle 8 stroke:#f87575,stroke-width:2px;
+linkStyle 9 stroke:#f87575,stroke-width:2px;
+
+classDef k8s-Cluster stroke-width:4px;
+class ExternalUser k8s-Cluster
+class Ingress k8s-Cluster
+class Varnish k8s-Cluster
+class Envoy k8s-Cluster
+class App1 k8s-Cluster
+class App2 k8s-Cluster
+class Zipkin k8s-Cluster
+class Filebeat k8s-Cluster
+class Logstash k8s-Cluster
+class Elasticsearch k8s-Cluster
+class Kibana k8s-Cluster
+class ElasticAPM k8s-Cluster
+class Prometheus k8s-Cluster
+class Grafana k8s-Cluster
+class EnvoyDaemonSet k8s-Cluster
+
+classDef CICDPipeline stroke-width:4px;
+class SourceCode CICDPipeline
+class Build CICDPipeline
+class Test CICDPipeline
+class Deploy CICDPipeline
+
+classDef security stroke-width:4px;
+class NetworkPolicies security
+class PodSecurityPolicies security
+class RBAC security
+class SecretsManagement security
+class ImageScanning security
