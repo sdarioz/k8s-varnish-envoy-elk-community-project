@@ -1,11 +1,11 @@
 
 
-# Varnish & Envoy Caching Guide :construction:
+# Kubernetes + Varnish & Envoy Caching + ELK Stack [Community Project] :construction:
 **Varnish - Envoy - Kubernetes - Elasticsearch - Kibana - Filebeat + Logstash - Grafana, Prometheus, and more.**
 
 # Introduction
 
-Initially a personal project, this repository holds immense potential as a **community-driven guide.** :raised_hands: 
+Initially a personal project, this repository holds immense potential as a **community-driven project.** :raised_hands: 
 
 # About the Guide :book:
 ### This repository aims to promote a collaborative effort to create documentation, resources or guides for using caching proxies like Varnish and Envoy in Kubernetes environments, covering:
