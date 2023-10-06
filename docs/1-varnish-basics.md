@@ -4,12 +4,23 @@
 
 In the first part of this notebook, we covered the basics of running Varnish on Kubernetes. Now let's look at some more advanced configuration to take full advantage of Varnish's caching capabilities.
 
+# Introduction to Varnish
+**The basics**
+Varnish Cache is a web application accelerator also known as a caching HTTP reverse proxy. You install it in front of any server that speaks HTTP and configure it to cache the contents. Varnish Cache is really, really fast. It typically speeds up delivery with a factor of 300 - 1000x, depending on your architecture. 
+- A high level overview of what Varnish does can be seen in [this video.](https://www.youtube.com/watch?v=fGD14ChpcL4)
+
+
+
+
 ## Customizing the Varnish Configuration
 
 The default Varnish configuration provided by the `emgag/varnish` image works well out of the box. But for more control, we can mount a custom `default.vcl` file:
 
 ```
 // Example deployment with custom VCL mount
+
+# See the VCL chapters in the Users Guide at https://www.varnish-cache.org/docs/
+# and https://www.varnish-cache.org/trac/wiki/VCLExamples for examples.
 ```
 
 This allows us to tweak things like:
