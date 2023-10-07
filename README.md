@@ -1,6 +1,6 @@
 
 
-# Kubernetes + Varnish & Envoy Caching + ELK Stack [Community Project] :construction:
+# Kubernetes + Varnish & Envoy Caching + ELK Stack :construction:
 **Varnish - Envoy - Kubernetes - Elasticsearch - Kibana - Filebeat + Logstash - Grafana, Prometheus, and more.**
 
 # Introduction
