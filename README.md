@@ -17,8 +17,7 @@ Initially a personal project, this repository holds immense potential as a **com
 
 It aims to fill knowledge gaps through shared experience and community contributions.
 
-**Your ideas are most welcome!** 
-Together we can build an excellent resource. :muscle:
+We can build an excellent resource together. :muscle:
 
 # This repo seeks to become an up-to-date resource.. :thought_balloon:
 
@@ -26,7 +25,7 @@ Together we can build an excellent resource. :muscle:
 
 Technologies like Kubernetes, Varnish, Envoy and Elastic Stack have an amazing potential for high-performance caching.
 
-### We need contributors! :calling: :satellite:
+### Community contributions are essential for this repo, you are invited to contribute. :calling: :satellite:
 
 ---
 
@@ -78,7 +77,7 @@ community-varnish-envoy-k8s-elk-guide
 └── LICENSE
 ```
 
-But much more is needed! **Your contributions are welcome! :pray:**
+But much more is needed, **you would like to contribuite?:pray:**
 
 - Observability guides
 - Caching invalidation  
@@ -107,7 +106,7 @@ Community contributions are essential for expanding the knowledge base.
 
 ## Contributing :busts_in_silhouette:
 
-**We need contributors!**
+**This repo is intended to be built by the community.**
 
 Help improve the docs by:
 
